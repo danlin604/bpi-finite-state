@@ -52,7 +52,7 @@ The program works for test inputs and the example inputs.
 
 ## Have test cases been written
 
-Test cases are written Jest under `bpi-finite-state.test.js`.
+Test cases are written in Jest under `bpi-finite-state.test.js`.
 
 ## How is the code organized
 
@@ -62,11 +62,11 @@ The code is organized naively in a single file, and are split into the following
 - getStateFromTransitionTable
 - getFinalStateFromBinaryString
 
-A reason for splitting code into multiple functions here is to help mean understand basic steps required to reach the example outputs. An additional benefit is that we can now pipe and test each function separately except `getStateFromTransitionTable`.
+A reason for splitting code into multiple functions here is to help me understand the basic steps required to reach the example outputs. An additional benefit is that we can now pipe and test each function separately except `getStateFromTransitionTable`.
 
 A possible improvement for `getStateFromTransitionTable` is to make it more generic and accept different *transition tables* functions, and *state enums*.
 
-We can try validating inputs via `decorators` such as `@checkIfStateValid` in order to clean up and output handle input errors in a composable manner.
+We can try validating inputs via `decorators` such as `@checkIfStateValid` in order to clean up inputs and handle input errors in a composable manner.
 
 The states can be cleaned up further by converting it to a enum-like object (perhaps using Object.freeze or TypeScript).
 
